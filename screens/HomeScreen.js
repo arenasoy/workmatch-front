@@ -1,11 +1,11 @@
 import React from 'react';
 import {
+  Button,
   Image,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
@@ -45,12 +45,13 @@ export default class HomeScreen extends React.Component {
               funciona?
             </Text>
           </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
+          <Button
+            onPress={this._openLogin}
+            title="Login"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+          
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
@@ -95,6 +96,11 @@ export default class HomeScreen extends React.Component {
     WebBrowser.openBrowserAsync(
       'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
     );
+  };
+
+  _openLogin = () => {
+    const {navigate} = this.props.navigation;
+    navigate('Login');
   };
 }
 
