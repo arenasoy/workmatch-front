@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Button,
-  TextInput,
   StyleSheet,
   ScrollView,
   Text,
@@ -9,6 +7,7 @@ import {
 } from 'react-native';
 
 import Input from '../components/Input';
+import Button from '../components/Button';
 
 export default class Login extends React.Component {
   static navigationOptions = {
@@ -24,11 +23,12 @@ export default class Login extends React.Component {
           <Input label="e-mail"/>
           <Input secureTextEntry={true} label="senha"/>
           <Button
-            onPress={this._login}
-            title="Login"
-            color="#841584"
-            style={styles.button}
-          />
+              onPress={this._openLogin}
+              underlayColor='#ffffff'
+              button={styles.loginButton}
+              textStyle={styles.textStyleWhite}
+              text="Entrar"
+            />
         </ScrollView>
       </View>
     );
@@ -65,7 +65,6 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //flexDirection: 'row',
     backgroundColor: '#fff',
   },
   button: {
@@ -75,7 +74,21 @@ const styles = StyleSheet.create({
     fontSize: 50,
     flex: 1,
     flexDirection: 'row',
-    marginTop: 50,
+    marginTop: 100,
     textAlign: 'center'
-  }
+  },
+  loginButton: {
+    margin: 30,
+    alignItems: 'center',
+    backgroundColor: '#0066cc',
+    height: 40,
+    width: 90,
+    justifyContent: 'center',
+    borderRadius: 10,
+    alignSelf: 'flex-end',
+  },
+  textStyleWhite: {
+    fontSize: 30,
+    color: '#ffffff'
+  },
 });

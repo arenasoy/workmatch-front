@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Button,
   Image,
   Platform,
   ScrollView,
@@ -9,8 +8,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
-
-import { MonoText } from '../components/StyledText';
+import Button from '../components/Button';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -31,36 +29,32 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
-
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-              funciona?
-            </Text>
+          <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+            <Button
+              onPress={this._openLogin}
+              underlayColor='#ffffff'
+              button={styles.registerButton}
+              textStyle={styles.textStyleBlack}
+              text="Cadastro"
+            />
+            
+            <Button
+              onPress={this._openLogin}
+              underlayColor='#ffffff'
+              button={styles.loginButton}
+              textStyle={styles.textStyleWhite}
+              text="Login"
+            />
           </View>
           <Button
             onPress={this._openLogin}
-            title="Login"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
+            underlayColor='#ffffff'
+            button={styles.enterpriseButton}
+            textStyle={styles.textStyleWhite}
+            text="Sou uma empresa"
           />
           
         </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
@@ -109,6 +103,44 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  loginButton: {
+    margin: 10,
+    alignItems: 'center',
+    backgroundColor: '#0066cc',
+    height: 40,
+    width: 90,
+    justifyContent: 'center',
+    borderRadius: 10,
+    alignSelf: 'flex-end',
+  },
+  registerButton: {
+    margin: 10,
+    alignItems: 'center',
+    borderColor: '#d3d3d3',
+    height: 40,
+    width: 130,
+    justifyContent: 'center',
+    borderRadius: 10,
+    alignSelf: 'flex-start',
+  },
+  enterpriseButton: {
+    margin: 10,
+    alignItems: 'center',
+    backgroundColor: '#ff9933',
+    height: 40,
+    width: 250,
+    justifyContent: 'center',
+    borderRadius: 10,
+    alignSelf: 'center'
+  },
+  textStyleWhite: {
+    fontSize: 30,
+    color: '#ffffff'
+  },
+  textStyleBlack: {
+    fontSize: 30,
+    color: '#000000'
+  },
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',
@@ -121,12 +153,12 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 30,
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 300,
+    height: 300,
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
