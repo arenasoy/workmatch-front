@@ -47,7 +47,7 @@ export default class HomeScreen extends React.Component {
             />
           </View>
           <Button
-            onPress={this._openLogin}
+            onPress={this._openEnterpriseRegister}
             underlayColor='#ffffff'
             button={styles.enterpriseButton}
             textStyle={styles.textStyleWhite}
@@ -101,6 +101,11 @@ export default class HomeScreen extends React.Component {
     const {navigate} = this.props.navigation;
     navigate('Register');
   };
+
+  _openEnterpriseRegister = () => {
+    const {navigate} = this.props.navigation;
+    navigate('EnterpriseRegister');
+  }
 }
 
 const styles = StyleSheet.create({

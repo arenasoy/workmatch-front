@@ -5,6 +5,7 @@ import RegisterScreen from '../screens/RegisterScreen';
 import KnowledgeScreen from '../screens/KnowledgeScreen';
 import InterestScreen from '../screens/InterestScreen';
 import FeedScreen from '../screens/FeedScreen';
+import EnterpriseRegisterScreen from '../screens/EnterpriseRegisterScreen';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -13,6 +14,7 @@ const MainNavigator = createStackNavigator({
   Knowledge: {screen: KnowledgeScreen},
   Interest: {screen: InterestScreen},
   Feed: {screen: FeedScreen},
+  EnterpriseRegister: {screen: EnterpriseRegisterScreen}
 });
 
 const App = createAppContainer(MainNavigator);
