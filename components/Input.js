@@ -17,7 +17,7 @@ export default class Input extends React.Component {
             
             <TextInput
                 {...this.props}
-                style={styles.input}
+                style={StyleSheet.flatten([styles.input, {width: this.props.inputWidth}])}
                 onChangeText={(text) => this.setState({text})}
                 value={this.state.text}
             />  
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
       flexWrap: 'wrap',
     },
     input: {
-        width: '80%',
+        flex: 1,
         height: 50,
         borderColor: '#0066cc',
         borderWidth: 1,

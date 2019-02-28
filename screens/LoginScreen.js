@@ -20,8 +20,8 @@ export default class Login extends React.Component {
       
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <Text style={styles.title}>Login</Text>
-          <Input label="e-mail" marginContainer={30} labelStyle={styles.labelStyle}/>
-          <Input secureTextEntry={true} label="senha" marginContainer={30} labelStyle={styles.labelStyle}/>
+          <Input label="e-mail" inputWidth={'80%'} marginContainer={30} labelStyle={styles.labelStyle}/>
+          <Input secureTextEntry={true} label="senha" inputWidth={'80%'} marginContainer={30} labelStyle={styles.labelStyle}/>
           <Button
               onPress={this._login.bind(this)}
               underlayColor='#ffffff'

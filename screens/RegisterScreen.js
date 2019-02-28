@@ -20,10 +20,10 @@ export default class RegisterScreen extends React.Component {
       
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <Text style={styles.title}>Cadastro</Text>
-          <Input label="nome" marginContainer={15} labelStyle={styles.labelStyle}/>
-          <Input label="e-mail" marginContainer={10} labelStyle={styles.labelStyle}/>
-          <Input secureTextEntry={true} label="senha" marginContainer={10} labelStyle={styles.labelStyle}/>
-          <Input secureTextEntry={true} label="confirmação de senha" marginContainer={10} labelStyle={styles.labelStyle}/>
+          <Input label="nome" inputWidth={'80%'} marginContainer={15} labelStyle={styles.labelStyle}/>
+          <Input label="e-mail" inputWidth={'80%'} marginContainer={10} labelStyle={styles.labelStyle}/>
+          <Input secureTextEntry={true} inputWidth={'80%'} label="senha" marginContainer={10} labelStyle={styles.labelStyle}/>
+          <Input secureTextEntry={true} inputWidth={'80%'} label="confirmação de senha" marginContainer={10} labelStyle={styles.labelStyle}/>
           <Button
               onPress={this._register.bind(this)}
               underlayColor='#ffffff'

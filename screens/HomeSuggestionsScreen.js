@@ -24,7 +24,7 @@ export default class HomeSuggestionsScreen extends React.Component {
       <View style={styles.container}>
       
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <Input label="sugestões de moradia" marginContainer={70} labelStyle={styles.labelStyle}/>
+          <Input label="Sugestões de moradia" inputWidth={'80%'} marginContainer={70} labelStyle={styles.labelStyle}/>
           
           <Button
               onPress={this._next.bind(this)}
