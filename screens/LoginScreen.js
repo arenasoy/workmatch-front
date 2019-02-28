@@ -23,7 +23,7 @@ export default class Login extends React.Component {
           <Input label="e-mail" marginContainer={30} labelStyle={styles.labelStyle}/>
           <Input secureTextEntry={true} label="senha" marginContainer={30} labelStyle={styles.labelStyle}/>
           <Button
-              onPress={this._openLogin}
+              onPress={this._openLogin.bind(this)}
               underlayColor='#ffffff'
               button={styles.loginButton}
               textStyle={styles.textStyleWhite}
@@ -43,9 +43,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  button: {
-    alignSelf: 'flex-end'
   },
   title: {
     fontSize: 50,
