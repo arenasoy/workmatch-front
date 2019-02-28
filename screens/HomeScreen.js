@@ -31,7 +31,7 @@ export default class HomeScreen extends React.Component {
           </View>
           <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
             <Button
-              onPress={this._openLogin}
+              onPress={this._openRegister}
               underlayColor='#ffffff'
               button={styles.registerButton}
               textStyle={styles.textStyleBlack}
@@ -95,6 +95,11 @@ export default class HomeScreen extends React.Component {
   _openLogin = () => {
     const {navigate} = this.props.navigation;
     navigate('Login');
+  };
+
+  _openRegister = () => {
+    const {navigate} = this.props.navigation;
+    navigate('Register');
   };
 }
 

@@ -19,22 +19,24 @@ export default class Login extends React.Component {
       <View style={styles.container}>
       
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <Text style={styles.title}>Login</Text>
-          <Input label="e-mail" marginContainer={30} labelStyle={styles.labelStyle}/>
-          <Input secureTextEntry={true} label="senha" marginContainer={30} labelStyle={styles.labelStyle}/>
+          <Text style={styles.title}>Cadastro</Text>
+          <Input label="nome" marginContainer={15} labelStyle={styles.labelStyle}/>
+          <Input label="e-mail" marginContainer={10} labelStyle={styles.labelStyle}/>
+          <Input secureTextEntry={true} label="senha" marginContainer={10} labelStyle={styles.labelStyle}/>
+          <Input secureTextEntry={true} label="confirmação de senha" marginContainer={10} labelStyle={styles.labelStyle}/>
           <Button
-              onPress={this._openLogin}
+              onPress={this._register}
               underlayColor='#ffffff'
-              button={styles.loginButton}
+              button={styles.registerButton}
               textStyle={styles.textStyleWhite}
-              text="Entrar"
+              text="Salvar"
             />
         </ScrollView>
       </View>
     );
   }
 
-  _login() {
+  _register() {
 
   }
 }
@@ -48,13 +50,13 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end'
   },
   title: {
-    fontSize: 50,
+    fontSize: 40,
     flex: 1,
     flexDirection: 'row',
-    marginTop: 100,
+    marginTop: 50,
     textAlign: 'center'
   },
-  loginButton: {
+  registerButton: {
     margin: 30,
     alignItems: 'center',
     backgroundColor: '#0066cc',
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     color: '#ffffff'
   },
   labelStyle: {
-    fontSize: 30,
-    width: '70%'
+    fontSize: 25, 
+    width: '75%'
   }
 });

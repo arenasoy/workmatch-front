@@ -10,8 +10,8 @@ export default class Input extends React.Component {
     
     render() {
     return ( 
-        <View style={styles.container}>
-            <Text style={styles.label}>
+        <View style={StyleSheet.flatten([styles.container, {marginTop: this.props.marginContainer}])}>
+            <Text style={this.props.labelStyle}>
                 {this.props.label}
             </Text>
             
@@ -31,21 +31,16 @@ const styles = StyleSheet.create({
       flex: 1,
       flexDirection: 'column',
       backgroundColor: '#fff',
-      marginTop: 30,
       justifyContent: 'center',
       alignItems: 'center',
-      flexWrap: 'wrap'
-    },
-    label: {
-        fontSize: 30,
-        //alignSelf: 'flex-start',
-        width: '70%',
+      flexWrap: 'wrap',
     },
     input: {
         width: '80%',
         height: 50,
         borderColor: '#0066cc',
         borderWidth: 1,
-        borderRadius: 15
+        borderRadius: 15,
+        padding: 10,
     }
 });
