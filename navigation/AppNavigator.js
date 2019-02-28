@@ -7,6 +7,7 @@ import InterestScreen from '../screens/InterestScreen';
 import FeedScreen from '../screens/FeedScreen';
 import EnterpriseRegisterScreen from '../screens/EnterpriseRegisterScreen';
 import PersonsScreen from '../screens/PersonsScreen';
+import HomeSuggestionsScreen from '../screens/HomeSuggestionsScreen';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
@@ -16,7 +17,8 @@ const MainNavigator = createStackNavigator({
   Interest: {screen: InterestScreen},
   Feed: {screen: FeedScreen},
   EnterpriseRegister: {screen: EnterpriseRegisterScreen},
-  Persons: {screen: PersonsScreen}
+  Persons: {screen: PersonsScreen},
+  HomeSuggestions: {screen: HomeSuggestionsScreen},
 });
 
 const App = createAppContainer(MainNavigator);

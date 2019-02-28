@@ -41,7 +41,7 @@ export default class PersonsScreen extends React.Component {
 
   _next() {
     const {navigate} = this.props.navigation;
-    navigate('Home');
+    navigate('HomeSuggestions');
   }
 }
 

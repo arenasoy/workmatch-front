@@ -2,41 +2,45 @@ import React from 'react';
 import {
   StyleSheet,
   ScrollView,
-  Text,
   View,
 } from 'react-native';
 
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-export default class Login extends React.Component {
+
+export default class HomeSuggestionsScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = { search: '' };
+  }
 
   render() {
     return (
       <View style={styles.container}>
       
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <Text style={styles.title}>Login</Text>
-          <Input label="e-mail" marginContainer={30} labelStyle={styles.labelStyle}/>
-          <Input secureTextEntry={true} label="senha" marginContainer={30} labelStyle={styles.labelStyle}/>
+          <Input label="sugestões de moradia" marginContainer={70} labelStyle={styles.labelStyle}/>
+          
           <Button
-              onPress={this._login.bind(this)}
+              onPress={this._next.bind(this)}
               underlayColor='#ffffff'
-              button={styles.loginButton}
+              button={styles.nextButton}
               textStyle={styles.textStyleWhite}
-              text="Entrar"
+              text="Próximo"
             />
         </ScrollView>
       </View>
     );
   }
 
-  _login() {
+  _next() {
     const {navigate} = this.props.navigation;
-    navigate('Feed');
+    navigate('Home');
   }
 }
 
@@ -46,18 +50,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: 50,
+    fontSize: 30,
     flex: 1,
     flexDirection: 'row',
     marginTop: 100,
     textAlign: 'center'
   },
-  loginButton: {
+  nextButton: {
     margin: 30,
     alignItems: 'center',
     backgroundColor: '#0066cc',
     height: 40,
-    width: 90,
+    width: 120,
     justifyContent: 'center',
     borderRadius: 10,
     alignSelf: 'flex-end',
