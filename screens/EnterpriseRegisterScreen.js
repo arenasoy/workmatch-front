@@ -40,7 +40,7 @@ export default class EnterpriseRegisterScreen extends React.Component {
 
   _register() {
     const {navigate} = this.props.navigation;
-    navigate('Home');
+    navigate('Persons');
   }
 }
 
