@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
   registerButton: {
     margin: 10,
     alignItems: 'center',
-    borderColor: '#d3d3d3',
+    //borderColor: '#d3d3d3',
+    borderColor: '#0066cc', // e se a gente deixasse os dois botões iniciais azuis? Acho que combina com o logo
     height: 40,
     width: 130,
     justifyContent: 'center',
