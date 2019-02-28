@@ -41,7 +41,7 @@ export default class KnowledgeScreen extends React.Component {
 
   _next() {
     const {navigate} = this.props.navigation;
-    navigate('Interest');
+    navigate('Feed');
   }
 }
 
