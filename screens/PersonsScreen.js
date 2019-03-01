@@ -19,7 +19,7 @@ export default class PersonsScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { modalVisible: false, text: '' };
+    this.state = { modalVisible: false, name: '', job: '', contact: '', school: '', search: '' };
   }
 
   _openModal = () => {
@@ -56,8 +56,8 @@ export default class PersonsScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(name) => this.setState({name})}
+                      value={this.state.name}
                   />  
                 </View>
                 <View style={styles.containerInput}>
@@ -67,8 +67,8 @@ export default class PersonsScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(job) => this.setState({job})}
+                      value={this.state.job}
                   />  
                 </View>
                 <View style={styles.containerInput}>
@@ -78,8 +78,8 @@ export default class PersonsScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(contact) => this.setState({contact})}
+                      value={this.state.contact}
                   />  
                 </View>
                 <View style={styles.containerInput}>
@@ -89,8 +89,8 @@ export default class PersonsScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(school) => this.setState({school})}
+                      value={this.state.school}
                   />  
                 </View>
                 
@@ -108,14 +108,20 @@ export default class PersonsScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <Text style={styles.title}>Pessoas</Text>
           
-          <Button
-              onPress={this._openModal.bind(this)}
-              underlayColor='#ffffff'
-              button={styles.addButton}
-              textStyle={styles.textStyleWhite}
-              text="+"
-            />
-
+          <View style={{flex: 1, flexDirection: 'row'}}>
+              <TextInput
+                style={styles.input}
+                onChangeText={(search) => this.setState({search})}
+                value={this.state.search}
+              />
+            <Button
+                onPress={this._openModal.bind(this)}
+                underlayColor='#ffffff'
+                button={styles.addButton}
+                textStyle={styles.textStyleWhite}
+                text="+"
+              />
+          </View>
 
           <Button
               onPress={this._next.bind(this)}
@@ -208,5 +214,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     padding: 10,
-}
+  },
+  input: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    padding: 5,
+    borderWidth: 1,
+    borderColor:'#0066cc',
+    borderRadius: 5,
+    height: 50,
+    width: 200,
+    marginLeft: 15,
+  },
 });

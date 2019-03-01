@@ -22,7 +22,7 @@ export default class VacancyScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { modalVisible: false, text: '' };
+    this.state = { modalVisible: false, search: '', job: '', requirements: '', interests: '', description: '', hours: '', type: '', start: '' };
   }
 
   _openModal = () => {
@@ -60,8 +60,8 @@ export default class VacancyScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(job) => this.setState({job})}
+                      value={this.state.job}
                   />  
                 </View>
                 <View style={styles.containerInput}>
@@ -71,8 +71,8 @@ export default class VacancyScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(requirements) => this.setState({requirements})}
+                      value={this.state.requirements}
                   />  
                 </View>
                 <View style={styles.containerInput}>
@@ -82,8 +82,8 @@ export default class VacancyScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(interests) => this.setState({interests})}
+                      value={this.state.interests}
                   />  
                 </View>
                 <View style={styles.containerInput}>
@@ -93,8 +93,8 @@ export default class VacancyScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(description) => this.setState({description})}
+                      value={this.state.description}
                   />  
                 </View>
                 
@@ -105,8 +105,8 @@ export default class VacancyScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(hours) => this.setState({hours})}
+                      value={this.state.hours}
                   />  
                 </View>
 
@@ -117,8 +117,8 @@ export default class VacancyScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(type) => this.setState({type})}
+                      value={this.state.type}
                   />  
                 </View>
 
@@ -129,8 +129,8 @@ export default class VacancyScreen extends React.Component {
                   
                   <TextInput
                       style={styles.inputStyle}
-                      onChangeText={(text) => this.setState({text})}
-                      value={this.state.text}
+                      onChangeText={(start) => this.setState({start})}
+                      value={this.state.start}
                   />  
                 </View>
                 
@@ -148,16 +148,20 @@ export default class VacancyScreen extends React.Component {
       
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <Text style={styles.title}>Vagas</Text>
-          
-          <Button
-              onPress={this._openModal.bind(this)}
-              underlayColor='#ffffff'
-              button={styles.addButton}
-              textStyle={styles.textStyleWhite}
-              text="+"
-            />
-
-
+          <View style={{flex: 1, flexDirection: 'row'}}>
+              <TextInput
+                style={styles.input}
+                onChangeText={(search) => this.setState({search})}
+                value={this.state.search}
+              />
+            <Button
+                onPress={this._openModal.bind(this)}
+                underlayColor='#ffffff'
+                button={styles.addButton}
+                textStyle={styles.textStyleWhite}
+                text="+"
+              />
+          </View>
           <Button
               onPress={this._next.bind(this)}
               underlayColor='#ffffff'
@@ -249,5 +253,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     padding: 10,
-}
+  }, 
+  
+  input: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    padding: 5,
+    borderWidth: 1,
+    borderColor:'#0066cc',
+    borderRadius: 5,
+    height: 50,
+    width: 200,
+    marginLeft: 15,
+  },
 });

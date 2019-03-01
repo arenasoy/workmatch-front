@@ -3,6 +3,7 @@ import {
   StyleSheet,
   ScrollView,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 
@@ -17,7 +18,7 @@ export default class KnowledgeScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { search: '' };
+    this.state = { text: '' };
   }
 
   render() {
@@ -27,6 +28,12 @@ export default class KnowledgeScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <Text style={styles.title}>Acrescente tecnologias que você tem conhecimento</Text>
           
+          <TextInput
+                  style={styles.input}
+                  onChangeText={(text) => this.setState({text})}
+                  value={this.state.text}
+          />
+
           <Button
               onPress={this._next.bind(this)}
               underlayColor='#ffffff'
@@ -70,5 +77,17 @@ const styles = StyleSheet.create({
   textStyleWhite: {
     fontSize: 30,
     color: '#ffffff'
+  },
+  input: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    padding: 5,
+    borderWidth: 1,
+    borderColor:'#0066cc',
+    borderRadius: 5,
+    height: 50,
+    width: 200,
+    marginLeft: 15,
   },
 });

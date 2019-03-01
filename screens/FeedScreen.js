@@ -36,7 +36,7 @@ export default class FeedScreen extends React.Component {
             </TouchableOpacity>
 
             <TextInput
-                  style={{alignItems: 'center', borderWidth: 1, borderColor:'#0066cc', borderRadius: 5, height: 50, width: 200, marginLeft: 15}}
+                  style={styles.textInputStyle}
                   onChangeText={(text) => this.setState({text})}
                   value={this.state.text}
             /> 
@@ -158,8 +158,6 @@ export default class FeedScreen extends React.Component {
                 </Text>
               </View>
             </TouchableOpacity>
-          
-          
           </View>
         
         </ScrollView>
@@ -200,5 +198,15 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 15,
     margin: 5,
+  },
+  textInputStyle: {
+    alignItems: 'center',
+    padding: 5,
+    borderWidth: 1,
+    borderColor:'#0066cc',
+    borderRadius: 5,
+    height: 50,
+    width: 200,
+    marginLeft: 15,
   }
  });
