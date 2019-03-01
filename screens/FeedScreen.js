@@ -41,7 +41,7 @@ export default class FeedScreen extends React.Component {
                   value={this.state.text}
             /> 
 
-            <TouchableOpacity style={{alignItems: 'flex-end'}} activeOpacity={0.5} onPress={this._exit}>
+            <TouchableOpacity style={{alignItems: 'flex-end'}} activeOpacity={0.5} onPress={this._openMenu}>
               <Image
                   source={require('../assets/images/dots-vertical.png')}
                   style={styles.icon}
@@ -168,6 +168,11 @@ export default class FeedScreen extends React.Component {
 _openMonitora = () => {
   const {navigate} = this.props.navigation;
   navigate('Enterprise');
+}
+
+_openMenu = () => {
+  const {navigate} = this.props.navigation;
+  navigate('Register');
 }
 
 }

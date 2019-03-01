@@ -3,42 +3,52 @@ import {
   StyleSheet,
   ScrollView,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 
-import Input from '../components/Input';
+
 import Button from '../components/Button';
 
-export default class RegisterScreen extends React.Component {
+
+export default class LocationScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  }
 
   render() {
     return (
       <View style={styles.container}>
       
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <Text style={styles.title}>Cadastro</Text>
-          <Input label="nome" inputWidth={'80%'} marginContainer={15} labelStyle={styles.labelStyle}/>
-          <Input label="e-mail" inputWidth={'80%'} marginContainer={10} labelStyle={styles.labelStyle}/>
-          <Input secureTextEntry={true} inputWidth={'80%'} label="senha" marginContainer={10} labelStyle={styles.labelStyle}/>
-          <Input secureTextEntry={true} inputWidth={'80%'} label="confirmação de senha" marginContainer={10} labelStyle={styles.labelStyle}/>
+          <Text style={styles.title}>Acrescente filtros de localização ou pule essa etapa</Text>
+          
+          <TextInput
+                  style={styles.input}
+                  onChangeText={(text) => this.setState({text})}
+                  value={this.state.text}
+          />
+
           <Button
-              onPress={this._register.bind(this)}
+              onPress={this._next.bind(this)}
               underlayColor='#ffffff'
-              button={styles.registerButton}
+              button={styles.nextButton}
               textStyle={styles.textStyleWhite}
-              text="Salvar"
+              text="Próximo"
             />
         </ScrollView>
       </View>
     );
   }
 
-  _register() {
+  _next() {
     const {navigate} = this.props.navigation;
-    navigate('Location');
+    navigate('Knowledge');
   }
 }
 
@@ -48,18 +58,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: 40,
+    fontSize: 30,
     flex: 1,
     flexDirection: 'row',
-    marginTop: 50,
+    marginTop: 100,
     textAlign: 'center'
   },
-  registerButton: {
+  nextButton: {
     margin: 30,
     alignItems: 'center',
     backgroundColor: '#0066cc',
     height: 40,
-    width: 90,
+    width: 120,
     justifyContent: 'center',
     borderRadius: 10,
     alignSelf: 'flex-end',
@@ -68,8 +78,16 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#ffffff'
   },
-  labelStyle: {
-    fontSize: 25, 
-    width: '75%'
-  }
+  input: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    padding: 5,
+    borderWidth: 1,
+    borderColor:'#0066cc',
+    borderRadius: 5,
+    height: 50,
+    width: 200,
+    marginLeft: 15,
+  },
 });
