@@ -172,7 +172,7 @@ export default class VacancyScreen extends React.Component {
 
   _next() {
     const {navigate} = this.props.navigation;
-    navigate('Home');
+    navigate('EnterpriseHome');
   }
 }
 
