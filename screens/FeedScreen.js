@@ -50,7 +50,7 @@ export default class FeedScreen extends React.Component {
           </View>
           <View style={styles.breakLine}></View>
           <View style={{flex: 1, flexDirection: 'column'}}>
-            <TouchableOpacity style={{borderWidth: 1, borderColor: '#0066cc'}} activeOpacity={0.5} onPress={this._exit}>
+            <TouchableOpacity style={{borderWidth: 1, borderColor: '#0066cc'}} activeOpacity={0.5} onPress={this._openMonitora}>
               <View style={{flex: 1, flexDirection: 'row'}}>
                 <Image
                     source={require('../assets/images/monitora.jpg')}
@@ -164,9 +164,14 @@ export default class FeedScreen extends React.Component {
       </View>
     );
   }
-
+ 
+_openMonitora = () => {
+  const {navigate} = this.props.navigation;
+  navigate('Enterprise');
+}
 
 }
+
 
 const styles = StyleSheet.create({
   container: {
